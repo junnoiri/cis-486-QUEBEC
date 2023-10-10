@@ -22,7 +22,7 @@ const client = new MongoClient(uri, {
 app.get("/", async (req, res) => {
   client.connect;
   let mongoResult = await client
-    .db("cis-486-NOVEMBER-test")
+    .db("cis-486-QUEBEC")
     .collection("dev-profiles")
     .find()
     .toArray();
@@ -41,9 +41,7 @@ app.post("/updateProfile", async (req, res) => {
     console.log("user Name: ", req.body.devName);
 
     client.connect;
-    const collection = client
-      .db("cis-486-NOVEMBER-test")
-      .collection("dev-profiles");
+    const collection = client.db("cis-486-QUEBEC").collection("dev-profiles");
 
     // put it into mongo
     let result = await collection
@@ -68,9 +66,7 @@ app.post("/insertProfile", async (req, res) => {
     console.log("user Name: ", req.body.devName);
 
     client.connect;
-    const collection = client
-      .db("cis-486-NOVEMBER-test")
-      .collection("dev-profiles");
+    const collection = client.db("cis-486-QUEBEC").collection("dev-profiles");
 
     // put it into mongo
     let result = await collection
@@ -92,9 +88,7 @@ app.post("/deleteProfile", async (req, res) => {
     console.log("user Name: ", req.body.devName);
 
     client.connect;
-    const collection = client
-      .db("cis-486-NOVEMBER-test")
-      .collection("dev-profiles");
+    const collection = client.db("cis-486-QUEBEC").collection("dev-profiles");
 
     // put it into mongo
     let result = await collection
